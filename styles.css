@@ -16,6 +16,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
 }
 
 input, button {
@@ -26,7 +29,7 @@ input, button {
 }
 
 input {
-    width: 60%;
+    width: calc(100% - 22px);
 }
 
 button {
@@ -45,4 +48,38 @@ button:hover {
     background: rgba(255, 255, 255, 0.2);
     padding: 15px;
     border-radius: 10px;
+}
+
+.weather-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+    
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-icon {
+        font-size: 36px;
+    }
+
+    input, button {
+        padding: 8px;
+        margin: 8px;
+    }
 }
